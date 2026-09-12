@@ -8,3 +8,11 @@ dist/
 build/
 *.db
 corpus/private/
+data/
+.cache/
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+frontend/playwright-report/
+frontend/test-results/

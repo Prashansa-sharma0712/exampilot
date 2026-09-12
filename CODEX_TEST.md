@@ -1,1 +1,0 @@
-Codex workspace access verified.
