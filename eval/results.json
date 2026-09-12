@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-09-12T16:27:50.367490+00:00",
+  "run_at": "2026-09-12T16:44:02.510178+00:00",
   "official_labels": true,
   "label_status": "human_verified",
   "metric_limitations": "Answer success is a status + expected-keyword + exact-location proxy, not human semantic grading. Citation precision uses annotated expected locations; alternative valid sources can score as false positives. No hallucination-free claim is measured.",
@@ -7,7 +7,7 @@
   "provider": "extractive",
   "groups": {
     "single_doc": {
-      "passed": 7,
+      "passed": 8,
       "total": 10
     },
     "multi_doc": {
@@ -20,27 +20,27 @@
     }
   },
   "exact_source_locations": {
-    "passed": 12,
+    "passed": 13,
     "total": 20
   },
-  "citation_precision_proxy": 0.9090909090909091,
+  "citation_precision_proxy": 0.84,
   "mean_recall_at_returned_k": 0.975,
   "handwriting_retrieval": {
     "passed": 1,
     "total": 1
   },
-  "mean_retrieval_ms": 31.49,
-  "mean_answer_ms": 37.08,
-  "elapsed_seconds": 19.56,
+  "mean_retrieval_ms": 29.39,
+  "mean_answer_ms": 34.91,
+  "elapsed_seconds": 19.12,
   "records": [
     {
       "id": "s01",
       "type": "single_doc",
       "question": "What does arr.length give in Java?",
       "passed_proxy": false,
-      "failure": "SUFFICIENCY_FALSE_NEGATIVE",
-      "status": "NOT_COVERED",
-      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "failure": "CITATION_FAILURE",
+      "status": "ANSWERED",
+      "answer": "| Array | ArrayList |\n|---|---|\n| Fixed size | Dynamic size |\n| Can store primitive values directly | Stores objects |\n| Uses `length` | Uses `size()` |\n| Access using `arr[i]` | Access using `get(i)` |",
       "expected_locations": [
         [
           "text/course_notes.md",
@@ -49,17 +49,24 @@
           "Programming and Java Revision Notes / 8. Array Traversal"
         ]
       ],
-      "actual_locations": [],
+      "actual_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 19. Array vs ArrayList"
+        ]
+      ],
       "correct_locations": false,
-      "expected_files_found": false,
+      "expected_files_found": true,
       "keyword_check": false,
       "recall_at_returned_k": 1.0,
       "citation_hits": 0,
-      "citation_count": 0,
+      "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 35.23,
-      "answer_ms": 39.76,
+      "retrieval_ms": 52.7,
+      "answer_ms": 61.17,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -97,8 +104,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 24.16,
-      "answer_ms": 29.99,
+      "retrieval_ms": 33.8,
+      "answer_ms": 38.08,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -129,8 +136,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 27.94,
-      "answer_ms": 31.8,
+      "retrieval_ms": 24.24,
+      "answer_ms": 28.99,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -168,8 +175,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 22.99,
-      "answer_ms": 28.66,
+      "retrieval_ms": 20.17,
+      "answer_ms": 25.91,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -207,8 +214,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 25.74,
-      "answer_ms": 29.11,
+      "retrieval_ms": 21.81,
+      "answer_ms": 25.25,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -246,8 +253,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 21.82,
-      "answer_ms": 26.04,
+      "retrieval_ms": 21.21,
+      "answer_ms": 25.58,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -285,8 +292,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 21.46,
-      "answer_ms": 25.72,
+      "retrieval_ms": 22.52,
+      "answer_ms": 26.87,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -296,10 +303,10 @@
       "id": "s08",
       "type": "single_doc",
       "question": "What is the main size limitation of a Java array?",
-      "passed_proxy": false,
-      "failure": "SUFFICIENCY_FALSE_NEGATIVE",
-      "status": "NOT_COVERED",
-      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "Size Limit:\nAn array can store only a fixed number of elements.",
       "expected_locations": [
         [
           "handwriting/Java-Basics-Handwritten-Notes_page-0005-724x1024 - Copy.jpg",
@@ -308,17 +315,24 @@
           null
         ]
       ],
-      "actual_locations": [],
-      "correct_locations": false,
-      "expected_files_found": false,
-      "keyword_check": false,
+      "actual_locations": [
+        [
+          "handwriting/Java-Basics-Handwritten-Notes_page-0005-724x1024 - Copy.jpg",
+          1,
+          null,
+          null
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
       "recall_at_returned_k": 1.0,
-      "citation_hits": 0,
-      "citation_count": 0,
+      "citation_hits": 1,
+      "citation_count": 1,
       "handwriting_expected": true,
       "handwriting_retrieved": true,
-      "retrieval_ms": 12.63,
-      "answer_ms": 17.27,
+      "retrieval_ms": 13.31,
+      "answer_ms": 18.23,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -356,8 +370,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 19.37,
-      "answer_ms": 22.68,
+      "retrieval_ms": 19.91,
+      "answer_ms": 23.4,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -395,8 +409,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 19.89,
-      "answer_ms": 23.01,
+      "retrieval_ms": 19.23,
+      "answer_ms": 22.42,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -446,8 +460,8 @@
       "citation_count": 2,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 38.95,
-      "answer_ms": 48.21,
+      "retrieval_ms": 39.58,
+      "answer_ms": 48.98,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -463,30 +477,30 @@
       "answer": "list is a collection of items with a definite order.\n\narray stores multiple values of the same data type.",
       "expected_locations": [
         [
-          "text/course_notes.md",
-          null,
-          null,
-          "Programming and Java Revision Notes / 7. Arrays"
-        ],
-        [
           "slides/Topic5ClassDesign.ppt",
           null,
           21,
           null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
         ]
       ],
       "actual_locations": [
         [
-          "text/course_notes.md",
-          null,
-          null,
-          "Programming and Java Revision Notes / 7. Arrays"
-        ],
-        [
           "slides/Topic5ClassDesign.ppt",
           null,
           21,
           null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
         ]
       ],
       "correct_locations": true,
@@ -497,8 +511,8 @@
       "citation_count": 2,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 37.47,
-      "answer_ms": 44.65,
+      "retrieval_ms": 37.69,
+      "answer_ms": 44.7,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -542,8 +556,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 44.23,
-      "answer_ms": 51.92,
+      "retrieval_ms": 40.91,
+      "answer_ms": 47.59,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -593,8 +607,8 @@
       "citation_count": 2,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 45.39,
-      "answer_ms": 53.23,
+      "retrieval_ms": 42.35,
+      "answer_ms": 50.18,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -610,30 +624,30 @@
       "answer": "class is a structure that defines the data and the methods to work on that data.\n\nMethod overriding occurs when a subclass provides its own implementation of a method already defined in the parent class.",
       "expected_locations": [
         [
-          "slides/Topic5ClassDesign.ppt",
-          null,
-          3,
-          null
-        ],
-        [
           "text/course_notes.md",
           null,
           null,
           "Programming and Java Revision Notes / 17. Method Overriding"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
         ]
       ],
       "actual_locations": [
         [
-          "slides/Topic5ClassDesign.ppt",
-          null,
-          3,
-          null
-        ],
-        [
           "text/course_notes.md",
           null,
           null,
           "Programming and Java Revision Notes / 17. Method Overriding"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
         ]
       ],
       "correct_locations": true,
@@ -644,8 +658,8 @@
       "citation_count": 2,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 50.04,
-      "answer_ms": 63.53,
+      "retrieval_ms": 43.67,
+      "answer_ms": 53.48,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -657,8 +671,8 @@
       "question": "What is a list, and what is a for-each loop used for?",
       "passed_proxy": false,
       "failure": "RETRIEVAL_FAILURE",
-      "status": "PARTIALLY_ANSWERED",
-      "answer": "list is a collection of items with a definite order.\n\nSome requested parts are not covered by the available evidence.",
+      "status": "ANSWERED",
+      "answer": "list is a collection of items with a definite order.\n\nA for-each loop is used to traverse an array or collection in Java.",
       "expected_locations": [
         [
           "pdf/JAVA PROGRAMMING NOTES.pdf",
@@ -679,6 +693,12 @@
           null,
           21,
           null
+        ],
+        [
+          "handwriting/Java-Basics-Handwritten-Notes_page-0005-724x1024 - Copy.jpg",
+          1,
+          null,
+          null
         ]
       ],
       "correct_locations": false,
@@ -686,11 +706,11 @@
       "keyword_check": false,
       "recall_at_returned_k": 0.5,
       "citation_hits": 1,
-      "citation_count": 1,
+      "citation_count": 2,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 46.43,
-      "answer_ms": 53.19,
+      "retrieval_ms": 44.85,
+      "answer_ms": 51.16,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -706,30 +726,30 @@
       "answer": "All parts of a class have visibility modifiers\nJava keywords\npublic, protected, private, (no modifier means package access)\ndo not use these modifiers on local variables (syntax error)\npublic means that constructor, method, or field may be accessed outside of the class. \npart of the interface\nconstructors and methods are generally public\nprivate means that part of the class is hidden and inaccessible by code outside of the class\npart of the implementation\ndata fields are generally private\n\nEncapsulation means combining data and methods inside a class and controlling access to the data.",
       "expected_locations": [
         [
-          "slides/Topic5ClassDesign.ppt",
-          null,
-          40,
-          null
-        ],
-        [
           "text/course_notes.md",
           null,
           null,
           "Programming and Java Revision Notes / 15. Encapsulation"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
         ]
       ],
       "actual_locations": [
         [
-          "slides/Topic5ClassDesign.ppt",
-          null,
-          40,
-          null
-        ],
-        [
           "text/course_notes.md",
           null,
           null,
           "Programming and Java Revision Notes / 15. Encapsulation"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
         ]
       ],
       "correct_locations": true,
@@ -740,8 +760,8 @@
       "citation_count": 2,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 46.68,
-      "answer_ms": 54.66,
+      "retrieval_ms": 41.75,
+      "answer_ms": 49.9,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -757,16 +777,16 @@
       "answer": "list is a collection of items with a definite order.\n\nArrayList allows random access because array works at the index basis.",
       "expected_locations": [
         [
-          "text/course_notes.md",
-          null,
-          null,
-          "Programming and Java Revision Notes / 19. Array vs ArrayList"
-        ],
-        [
           "slides/Topic5ClassDesign.ppt",
           null,
           21,
           null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 19. Array vs ArrayList"
         ]
       ],
       "actual_locations": [
@@ -791,8 +811,8 @@
       "citation_count": 2,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 46.01,
-      "answer_ms": 53.3,
+      "retrieval_ms": 40.14,
+      "answer_ms": 47.59,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -808,16 +828,16 @@
       "answer": "I could not find sufficient evidence in your materials to answer this question.",
       "expected_locations": [
         [
-          "text/course_notes.md",
-          null,
-          null,
-          "Programming and Java Revision Notes / 9. Enhanced For Loop"
-        ],
-        [
           "slides/Topic5ClassDesign.ppt",
           null,
           62,
           null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 9. Enhanced For Loop"
         ]
       ],
       "actual_locations": [],
@@ -829,8 +849,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 54.04,
-      "answer_ms": 61.13,
+      "retrieval_ms": 44.77,
+      "answer_ms": 51.64,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -846,16 +866,16 @@
       "answer": "nested loop means one loop is placed inside another loop.\n\nSome requested parts are not covered by the available evidence.",
       "expected_locations": [
         [
-          "slides/Topic5ClassDesign.ppt",
-          null,
-          46,
-          null
-        ],
-        [
           "text/course_notes.md",
           null,
           null,
           "Programming and Java Revision Notes / 6. Nested Loops"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          46,
+          null
         ]
       ],
       "actual_locations": [
@@ -874,8 +894,8 @@
       "citation_count": 1,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 49.69,
-      "answer_ms": 57.25,
+      "retrieval_ms": 42.57,
+      "answer_ms": 48.66,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -899,8 +919,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 21.01,
-      "answer_ms": 24.73,
+      "retrieval_ms": 13.92,
+      "answer_ms": 17.62,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -924,8 +944,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": true,
-      "retrieval_ms": 20.97,
-      "answer_ms": 24.4,
+      "retrieval_ms": 18.02,
+      "answer_ms": 21.37,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -949,8 +969,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 23.4,
-      "answer_ms": 27.11,
+      "retrieval_ms": 18.52,
+      "answer_ms": 22.3,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -974,8 +994,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 23.16,
-      "answer_ms": 26.85,
+      "retrieval_ms": 18.84,
+      "answer_ms": 22.59,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -999,8 +1019,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 23.47,
-      "answer_ms": 28.19,
+      "retrieval_ms": 19.09,
+      "answer_ms": 23.51,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -1024,8 +1044,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 21.03,
-      "answer_ms": 24.13,
+      "retrieval_ms": 17.47,
+      "answer_ms": 20.87,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -1049,8 +1069,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 17.1,
-      "answer_ms": 21.03,
+      "retrieval_ms": 16.3,
+      "answer_ms": 20.34,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -1074,8 +1094,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 43.47,
-      "answer_ms": 50.13,
+      "retrieval_ms": 39.78,
+      "answer_ms": 46.81,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -1099,8 +1119,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 20.95,
-      "answer_ms": 24.3,
+      "retrieval_ms": 17.35,
+      "answer_ms": 20.39,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
@@ -1124,8 +1144,8 @@
       "citation_count": 0,
       "handwriting_expected": false,
       "handwriting_retrieved": false,
-      "retrieval_ms": 40.09,
-      "answer_ms": 46.39,
+      "retrieval_ms": 35.09,
+      "answer_ms": 41.58,
       "mode": "extractive / hybrid_bm25_semantic_rrf",
       "warnings": [
         "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."

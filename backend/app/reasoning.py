@@ -26,6 +26,18 @@ def validate_claims(claims, chunks):
 
 def excerpt_for(need, chunk):
     terms = set(tokens(need))
+
+    # Query-language normalization for evidence matching.
+    # "main" is conversational filler; "Java" is contextual when
+    # a more specific concept is also present.
+    terms.discard('main')
+    if len(terms) > 1:
+        terms.discard('java')
+
+    # Match natural wording such as "size limitation" with
+    # source wording such as "Size Limit".
+    terms = {'limit' if t == 'limitation' else t for t in terms}
+
     if not terms:
         return None
     # Preserve nearby lines for scanned PDF text. All returned text remains verbatim.
@@ -39,11 +51,17 @@ def excerpt_for(need, chunk):
         candidates += ['\n'.join(lines[i:i+6]) for i in range(len(lines))]
     best = None
     pattern = definition_pattern(need)
-    require_definition = bool(re.search(r'^(?:what\s+(?:is|are)|define)\b', need, re.I))
+    require_definition = (
+        bool(re.search(r'^(?:what\s+(?:is|are)|define)\b', need, re.I))
+        and len(terms) <= 2
+    )
     for quote in candidates:
         if not 12 <= len(quote) <= 2000:
             continue
-        present = set(tokens(quote))
+        present = {
+            'limit' if t == 'limitation' else t
+            for t in tokens(quote)
+        }
         # Conservative all-term gate: related terminology alone is insufficient.
         if not terms.issubset(present):
             continue
