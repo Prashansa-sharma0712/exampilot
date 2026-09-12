@@ -1,19 +1,12 @@
 import re
 from time import perf_counter
 from .models import Answer, Claim, Need
-from .retrieval import tokens
+from .retrieval import tokens, definition_pattern, PREDICATES
+from .query import decompose, intent
 
 
 def normalize(text):
     return re.sub(r'\s+', ' ', text).strip().casefold()
-
-
-def decompose(question):
-    clean = question.strip().rstrip('?')
-    # Explicit conjunctions and comparisons; never assume a related aspect is covered.
-    clean = re.sub(r'^(compare|contrast)\s+', '', clean, flags=re.I)
-    parts = re.split(r'\s+(?:and|versus|vs\.?|with)\s+|\s*;\s*', clean, flags=re.I)
-    return [p.strip() for p in parts if p.strip()][:8] or [clean]
 
 
 def validate_claims(claims, chunks):
@@ -37,10 +30,16 @@ def excerpt_for(need, chunk):
         return None
     # Preserve nearby lines for scanned PDF text. All returned text remains verbatim.
     candidates = [p.strip() for p in re.split(r'\n\s*\n|(?<=[.!?])\s+(?=[A-Z])', chunk.text) if p.strip()]
+    paragraphs = re.split(r'\n\s*\n', chunk.text)
+    for i, heading in enumerate(paragraphs[:-1]):
+        if len(heading.split()) <= 8 and terms.issubset(set(tokens(heading))):
+            candidates.append(heading + '\n\n' + paragraphs[i + 1])
     if len(candidates) < 2:
         lines = chunk.text.splitlines()
         candidates += ['\n'.join(lines[i:i+6]) for i in range(len(lines))]
     best = None
+    pattern = definition_pattern(need)
+    require_definition = bool(re.search(r'^(?:what\s+(?:is|are)|define)\b', need, re.I))
     for quote in candidates:
         if not 12 <= len(quote) <= 2000:
             continue
@@ -53,9 +52,25 @@ def excerpt_for(need, chunk):
         if len(present - terms) < 3:
             continue
         # A title/list mentioning the topic is not an explanation.
-        if not re.search(r'\b(is|are|means|used|uses|has|have|can|cannot|must|requires|provides|contains|allows|stores|defines|reduces|increases|depends|occurs|refers|called|represents|consists|does|do|shall|will)\b', quote, re.I):
+        if not re.search(r'\b(' + PREDICATES + r'|used|has|have|can|cannot|must|called|does|do|shall|will)\b', quote, re.I):
             continue
-        if best is None or len(quote) < len(best):
+        direct = bool(pattern and pattern.search(quote))
+        if require_definition and pattern:
+            match = pattern.search(quote)
+            if match:
+                prefix = quote[:match.start()]
+                # A conditional specialization is not the requested definition.
+                if re.search(r'\b(if|unless|such)\b', prefix, re.I):
+                    continue
+                # Remove unrelated introductory questions while keeping an exact
+                # source substring, then stop at the first complete sentence.
+                quote = quote[match.start():]
+                end = re.search(r'[.!?](?:\s|$)', quote)
+                if end:
+                    quote = quote[:end.start()+1]
+        if require_definition and not direct:
+            continue
+        if best is None or (direct, -len(quote)) > (bool(pattern and pattern.search(best)), -len(best)):
             best = quote
     return best
 
@@ -67,6 +82,9 @@ def source_view(c):
 def answer_question(question, index, config, document_id=None, source_type=None, action='ask'):
     start = perf_counter()
     needs = decompose(question)
+    query_intent = intent(question, action)
+    if len(needs)>12:
+        return Answer(status='ERROR',answer='This question has more than 12 evidence needs. Split it into smaller questions.',resolved_question=question)
     if action == 'example' and 'example' not in question.lower():
         needs = [n + ' example' for n in needs]
     gathered = {}
@@ -98,8 +116,10 @@ def answer_question(question, index, config, document_id=None, source_type=None,
             seen = set()
             for need in needs:
                 matched = []
-                for c in by_need[need]:
-                    quote = excerpt_for(need, c)
+                candidates = [(c, excerpt_for(need, c)) for c in by_need[need]]
+                pattern = definition_pattern(need)
+                candidates.sort(key=lambda pair: bool(pair[1] and pattern and pattern.search(pair[1])), reverse=True)
+                for c, quote in candidates:
                     if quote and c.extraction_quality != 'LOW':
                         matched.append(c.chunk_id)
                         if normalize(quote) not in seen:
@@ -119,6 +139,10 @@ def answer_question(question, index, config, document_id=None, source_type=None,
             text = 'I could not find sufficient evidence in your materials to answer this question.' if status == 'NOT_COVERED' else 'The relevant source is too uncertain to answer reliably. Inspect the original and review its transcription.'
         if status == 'PARTIALLY_ANSWERED':
             text += '\n\nSome requested parts are not covered by the available evidence.'
-        return Answer(status=status, answer=text, claims=claims, coverage=coverage, missing_evidence=[n.need for n in coverage if not n.supported], sources=[source_view(c) for c in sources[:16]], mode=config.llm_provider + ' / ' + index.mode, warnings=warnings, resolved_question=question, retrieval_ms=round(elapsed, 2))
+        study_format = 'exam' if action=='exam' else 'simple' if action=='simple' else 'compare' if query_intent=='COMPARISON' else 'paragraph'
+        study_note = ''
+        if config.llm_provider=='extractive':
+            study_note = {'simple':'Simple view selects the core source statement; vocabulary remains the original author’s.', 'exam':f'Exam outline: {len(claims)} evidence-backed point(s). Missing details are not padded, and marks are not guaranteed.', 'compare':'Compare the supported source statements side by side. Differences beyond this evidence are not inferred.', 'paragraph':'Source wording is shown directly. Check the citation for full context.'}[study_format]
+        return Answer(status=status, answer=text, claims=claims, coverage=coverage, missing_evidence=[n.need for n in coverage if not n.supported], sources=[source_view(c) for c in sources[:max(16,len(cited_ids))]], mode=config.llm_provider + ' / ' + index.mode, warnings=warnings, resolved_question=question, retrieval_ms=round(elapsed, 2),query_intent=query_intent,study_format=study_format,study_note=study_note)
     except Exception as exc:
         return Answer(status='ERROR', answer='The evidence provider failed or returned an invalid answer. No unverified answer was displayed.', warnings=warnings + [type(exc).__name__], mode=config.llm_provider, resolved_question=question, retrieval_ms=round(elapsed, 2))

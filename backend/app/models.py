@@ -49,6 +49,9 @@ class Answer(BaseModel):
     mode: str = 'extractive'
     warnings: list[str] = Field(default_factory=list)
     retrieval_ms: float = 0
+    query_intent: str = 'OTHER'
+    study_format: str = 'paragraph'
+    study_note: str = ''
 
 
 class AskRequest(BaseModel):

@@ -6,11 +6,26 @@ from rank_bm25 import BM25Okapi
 from .config import ROOT
 
 STOP = set('a an the is are was were be been being of to in on at for from with by as and or what which how why when where does do did can could would should explain describe define give me tell about please that this it these those more simply now into turn mark answer compare versus vs according notes material course'.split())
+STOP.update('definition definitions discuss outline summarize mean contrast'.split())
+PREDICATES = r'is|are|means|refers to|stores|uses|allows|represents|consists of|divides|combines|explores|halves|changes|returns|removes|adds|tracks|maps|connects|provides|contains|requires|reduces|increases|depends|occurs|defines|stops'
 
 
 def tokens(text):
     words = re.findall(r'[a-zA-Z][a-zA-Z0-9_-]*|\d+', text.lower())
-    return [w for w in words if w not in STOP]
+    def singular(w):
+        if w.endswith('classes'): return w[:-2]
+        if len(w)>4 and w.endswith('ies'): return w[:-3]+'y'
+        if len(w)>4 and w.endswith('s') and not w.endswith(('ss','us','is')): return w[:-1]
+        return w
+    return [singular(w) for w in words if w not in STOP]
+
+
+def definition_pattern(query):
+    terms = tokens(query)
+    if not 1 <= len(terms) <= 4:
+        return None
+    phrase = r'\s+'.join(re.escape(t)+(r'(?:es)?' if t.endswith('ss') else r's?') for t in terms)
+    return re.compile(r'\b' + phrase + r'\s+(?:\w+ly\s+)?(?:' + PREDICATES + r')\b', re.I)
 
 
 class Index:
@@ -48,16 +63,26 @@ class Index:
         lexical = self.bm25.get_scores(tokens(query))
         ranks = [sorted(allowed, key=lambda i: lexical[i], reverse=True)]
         if self.encoder is not None:
-            vector = self.encoder.encode([query], normalize_embeddings=True)[0]
-            scores = self.vectors @ vector
-            ranks.append(sorted(allowed, key=lambda i: scores[i], reverse=True))
+            try:
+                vector = self.encoder.encode([query], normalize_embeddings=True)[0]
+                scores = self.vectors @ vector
+                ranks.append(sorted(allowed, key=lambda i: scores[i], reverse=True))
+            except Exception:
+                self.encoder = None
+                self.mode = 'bm25'
+                self.warning = 'Semantic query encoding failed; using BM25-only fallback.'
         fusion = defaultdict(float)
         for rank in ranks:
             for n, i in enumerate(rank[:40], 1):
                 fusion[i] += 1 / (60 + n)
         q = set(tokens(query))
+        definition = definition_pattern(query)
+        if definition:
+            for i in allowed:
+                if definition.search(self.chunks[i].text):
+                    fusion[i] += 1 / 61
         # Lightweight lexical rerank is explicit; it is not an entailment model.
-        order = sorted(fusion, key=lambda i: (len(q & set(self.tokenized[i])) / max(len(q), 1), fusion[i]), reverse=True)
+        order = sorted(fusion, key=lambda i: (bool(definition and definition.search(self.chunks[i].text)), len(q & set(self.tokenized[i])) / max(len(q), 1), fusion[i]), reverse=True)
         selected, seen, per_doc = [], set(), defaultdict(int)
         for i in order:
             chunk = self.chunks[i]

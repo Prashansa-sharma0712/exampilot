@@ -16,3 +16,7 @@ data/
 *.tsbuildinfo
 frontend/playwright-report/
 frontend/test-results/
+/eval/questions.json
+/eval/questions_draft.json
+/eval/results*.json
+/eval/failures*.json

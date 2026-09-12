@@ -81,7 +81,8 @@ def create_app(config=settings):
     def ask(request: AskRequest):
         sid = study.session(request.session_id)
         resolved = study.resolve(sid, request.question, request.action)
-        answer = answer_question(resolved, index(), config, request.document_id, request.source_type, request.action)
+        action = 'compare' if 'make a table' in request.question.lower() else request.action
+        answer = answer_question(resolved, index(), config, request.document_id, request.source_type, action)
         answer.session_id = sid
         study.record(sid, request.question, answer)
         return answer

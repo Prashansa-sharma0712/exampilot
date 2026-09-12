@@ -1,0 +1,492 @@
+[
+  {
+    "id": "s01",
+    "question": "What is array?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Array"
+      }
+    ],
+    "expected_keywords": [
+      "fixed-size"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m01",
+    "question": "Explain array and indexed lookup",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Array"
+      },
+      {
+        "file": "applications.md",
+        "section": "Indexed lookup"
+      }
+    ],
+    "expected_keywords": [
+      "array",
+      "indexed lookup"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u01",
+    "question": "What is the lock-free memory reclamation strategy for array?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s02",
+    "question": "What is stack?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Stack"
+      }
+    ],
+    "expected_keywords": [
+      "removed"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m02",
+    "question": "Explain stack and undo history",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Stack"
+      },
+      {
+        "file": "applications.md",
+        "section": "Undo history"
+      }
+    ],
+    "expected_keywords": [
+      "stack",
+      "undo history"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u02",
+    "question": "What is the lock-free memory reclamation strategy for stack?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s03",
+    "question": "What is queue?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Queue"
+      }
+    ],
+    "expected_keywords": [
+      "removed"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m03",
+    "question": "Explain queue and print scheduling",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Queue"
+      },
+      {
+        "file": "applications.md",
+        "section": "Print scheduling"
+      }
+    ],
+    "expected_keywords": [
+      "queue",
+      "print scheduling"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u03",
+    "question": "What is the lock-free memory reclamation strategy for queue?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s04",
+    "question": "What is linked list?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Linked list"
+      }
+    ],
+    "expected_keywords": [
+      "other"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m04",
+    "question": "Explain linked list and node insertion",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Linked list"
+      },
+      {
+        "file": "applications.md",
+        "section": "Node insertion"
+      }
+    ],
+    "expected_keywords": [
+      "linked list",
+      "node insertion"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u04",
+    "question": "What is the lock-free memory reclamation strategy for linked list?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s05",
+    "question": "What is binary search?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Binary search"
+      }
+    ],
+    "expected_keywords": [
+      "ordered"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m05",
+    "question": "Explain binary search and sorted input",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Binary search"
+      },
+      {
+        "file": "applications.md",
+        "section": "Sorted input"
+      }
+    ],
+    "expected_keywords": [
+      "binary search",
+      "sorted input"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u05",
+    "question": "What is the lock-free memory reclamation strategy for binary search?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s06",
+    "question": "What is merge sort?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Merge sort"
+      }
+    ],
+    "expected_keywords": [
+      "sorted"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m06",
+    "question": "Explain merge sort and merge operation",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Merge sort"
+      },
+      {
+        "file": "applications.md",
+        "section": "Merge operation"
+      }
+    ],
+    "expected_keywords": [
+      "merge sort",
+      "merge operation"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u06",
+    "question": "What is the lock-free memory reclamation strategy for merge sort?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s07",
+    "question": "What is hash table?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Hash table"
+      }
+    ],
+    "expected_keywords": [
+      "a"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m07",
+    "question": "Explain hash table and collision",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Hash table"
+      },
+      {
+        "file": "applications.md",
+        "section": "Collision"
+      }
+    ],
+    "expected_keywords": [
+      "hash table",
+      "collision"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u07",
+    "question": "What is the lock-free memory reclamation strategy for hash table?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s08",
+    "question": "What is breadth-first search?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Breadth-first search"
+      }
+    ],
+    "expected_keywords": [
+      "a"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m08",
+    "question": "Explain breadth-first search and frontier queue",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Breadth-first search"
+      },
+      {
+        "file": "applications.md",
+        "section": "Frontier queue"
+      }
+    ],
+    "expected_keywords": [
+      "breadth-first search",
+      "frontier queue"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u08",
+    "question": "What is the lock-free memory reclamation strategy for breadth-first search?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s09",
+    "question": "What is depth-first search?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Depth-first search"
+      }
+    ],
+    "expected_keywords": [
+      "another"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m09",
+    "question": "Explain depth-first search and backtracking",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Depth-first search"
+      },
+      {
+        "file": "applications.md",
+        "section": "Backtracking"
+      }
+    ],
+    "expected_keywords": [
+      "depth-first search",
+      "backtracking"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u09",
+    "question": "What is the lock-free memory reclamation strategy for depth-first search?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "s10",
+    "question": "What is recursion?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Recursion"
+      }
+    ],
+    "expected_keywords": [
+      "smaller"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "m10",
+    "question": "Explain recursion and base case",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "concepts.md",
+        "section": "Recursion"
+      },
+      {
+        "file": "applications.md",
+        "section": "Base case"
+      }
+    ],
+    "expected_keywords": [
+      "recursion",
+      "base case"
+    ],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  },
+  {
+    "id": "u10",
+    "question": "What is the lock-free memory reclamation strategy for recursion?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Self-authored synthetic fixture; known contents, not human-verified real course ground truth.",
+    "verification": "synthetic_authored"
+  }
+]
