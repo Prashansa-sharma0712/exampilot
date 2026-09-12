@@ -12,3 +12,4 @@ python-dotenv>=1,<2
 pytesseract>=0.3.13,<1
 olefile>=0.47,<1
 pytest>=8,<10
+rapidocr-onnxruntime==1.4.4

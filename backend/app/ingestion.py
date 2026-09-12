@@ -3,11 +3,12 @@ import hashlib
 import json
 import re
 from pathlib import Path
-import fitz
+import pymupdf as fitz
 from PIL import Image, ImageOps
 from pptx import Presentation
 from .config import ROOT
 from .models import Chunk
+from .pdf_text import page_text, broken_text
 
 EXTENSIONS = {'.pdf', '.pptx', '.ppt', '.md', '.txt', '.jpg', '.jpeg', '.png', '.webp'}
 IMAGES = {'.jpg', '.jpeg', '.png', '.webp'}
@@ -29,7 +30,7 @@ def image_text(path: Path, config, sidecars=True):
         if data.get('source_sha256') != digest(path):
             raise ValueError('Transcription does not match current image hash')
         if data.get('reviewed') is True and data.get('reviewer'):
-            return data['text'], data.get('quality', 'MEDIUM'), 'reviewed_transcription'
+            return data['text'], data.get('quality', 'MEDIUM'), data.get('method', 'reviewed_transcription')
     if config.vision_provider == 'openai_compatible':
         from .providers import vision_extract
         return vision_extract(path, config)
@@ -41,7 +42,15 @@ def image_text(path: Path, config, sidecars=True):
         # Local OCR is not a reliable handwriting assessor: require review.
         return text, 'LOW', 'tesseract_unreviewed'
     except Exception:
-        return '', 'LOW', 'ocr_unavailable'
+        try:
+            from rapidocr_onnxruntime import RapidOCR
+            global _ocr
+            if '_ocr' not in globals():
+                _ocr = RapidOCR(intra_op_num_threads=2, inter_op_num_threads=2)
+            result, _ = _ocr(str(path))
+            return '\n'.join(r[1] for r in (result or [])), 'LOW' if sidecars else 'MEDIUM', 'rapidocr_unreviewed'
+        except Exception:
+            return '', 'LOW', 'ocr_unavailable'
 
 
 def converted_ppt(path):
@@ -70,17 +79,26 @@ def sections(text):
 def extract(path: Path, config):
     ext = path.suffix.lower()
     if ext == '.pdf':
+        file_hash = digest(path)
         with fitz.open(path) as pdf:
             for n, page in enumerate(pdf, 1):
-                text = page.get_text(sort=True).strip()
-                quality, method = 'HIGH', 'native'
-                if len(re.sub(r'\W', '', text)) < 40:
-                    preview = ROOT / 'data' / 'ocr' / digest(path) / f'{n}.png'
+                text, method = page_text(page)
+                quality = 'HIGH'
+                if broken_text(text):
+                    preview = ROOT / 'data' / 'ocr' / file_hash / f'{n}.png'
                     preview.parent.mkdir(parents=True, exist_ok=True)
                     page.get_pixmap(matrix=fitz.Matrix(1.5, 1.5)).save(preview)
                     text, quality, method = image_text(preview, config, sidecars=False)
                 yield dict(page=n, text=text, source_type='pdf', extraction_quality=quality, extraction_method=method)
     elif ext in {'.ppt', '.pptx'}:
+        legacy = ROOT / 'data/converted' / digest(path) / 'slides.tsv'
+        if ext == '.ppt' and legacy.exists():
+            import base64
+            for line in legacy.read_text(encoding='utf-8').splitlines():
+                number, encoded = line.split('\t', 1)
+                text = base64.b64decode(encoded).decode('utf-8')
+                yield dict(slide=int(number), heading=text.splitlines()[0] if text.strip() else None, text=text, source_type='pptx', extraction_method='apache_poi_legacy')
+            return
         prs = Presentation(converted_ppt(path) if ext == '.ppt' else path)
         for n, slide in enumerate(prs.slides, 1):
             values = []
@@ -142,7 +160,7 @@ def ingest(corpus: Path, store, config):
             file_hash = digest(path)
             sidecar = path.with_suffix(path.suffix + '.transcript.json')
             fingerprint = file_hash + (digest(sidecar) if sidecar.exists() else '')
-            fingerprint += ':' + config.vision_provider
+            fingerprint += ':v2:' + config.vision_provider
             if existing.get(name, {}).get('hash') == fingerprint:
                 report['skipped'].append(name)
                 continue
