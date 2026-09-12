@@ -1,0 +1,562 @@
+[
+  {
+    "id": "s01",
+    "question": "What does arr.length give in Java?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 8. Array Traversal"
+      }
+    ],
+    "expected_keywords": [
+      "number",
+      "elements"
+    ],
+    "rationale": "The revision notes state that arr.length gives the number of elements in the array.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s02",
+    "question": "When is a for loop commonly used?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 3. Loops / for Loop"
+      }
+    ],
+    "expected_keywords": [
+      "iterations",
+      "known"
+    ],
+    "rationale": "The Markdown notes explain that a for loop is commonly used when the number of iterations is known.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s03",
+    "question": "What is a method in Java?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 11. Methods"
+      }
+    ],
+    "expected_keywords": [
+      "reusable",
+      "code"
+    ],
+    "rationale": "The revision notes define a method as a reusable block of code.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s04",
+    "question": "What is a class?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 3
+      }
+    ],
+    "expected_keywords": [
+      "data",
+      "methods"
+    ],
+    "rationale": "Slide 3 defines a class; slide 4 is an alternative valid definition and should be considered during human review.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s05",
+    "question": "What is a list?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 21
+      }
+    ],
+    "expected_keywords": [
+      "collection",
+      "order"
+    ],
+    "rationale": "Slide 21 defines an ordered collection.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s06",
+    "question": "Explain encapsulation",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 15. Encapsulation"
+      }
+    ],
+    "expected_keywords": [
+      "combining",
+      "data",
+      "methods"
+    ],
+    "rationale": "The Markdown revision notes define encapsulation as combining data and methods inside a class and controlling access to the data.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s07",
+    "question": "Explain public",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 40
+      }
+    ],
+    "expected_keywords": [
+      "outside"
+    ],
+    "rationale": "Slide 40 explains public visibility.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s08",
+    "question": "What is the main size limitation of a Java array?",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "handwriting/Java-Basics-Handwritten-Notes_page-0005-724x1024 - Copy.jpg",
+        "page": 1
+      }
+    ],
+    "expected_keywords": [
+      "fixed",
+      "size"
+    ],
+    "rationale": "The reviewed handwritten note states that an array has a fixed size and does not grow automatically at runtime.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s09",
+    "question": "Explain nested for loop",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 6. Nested Loops"
+      }
+    ],
+    "expected_keywords": [
+      "inside",
+      "another"
+    ],
+    "rationale": "The Markdown revision notes define a nested loop as one loop placed inside another loop.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "s10",
+    "question": "Explain for each loop",
+    "type": "single_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "pdf/JAVA PROGRAMMING NOTES.pdf",
+        "page": 23
+      }
+    ],
+    "expected_keywords": [
+      "for each",
+      "array"
+    ],
+    "rationale": "The Java programming PDF explains use of for and for-each loops when processing array elements.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m01",
+    "question": "What is a class, and what is an array?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 3
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 7. Arrays"
+      }
+    ],
+    "expected_keywords": [
+      "class",
+      "array"
+    ],
+    "rationale": "Requires the class definition from the slides and the array definition from the revision notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m02",
+    "question": "What is a list, and what is an array?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 21
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 7. Arrays"
+      }
+    ],
+    "expected_keywords": [
+      "list",
+      "array"
+    ],
+    "rationale": "Requires list evidence from the slides and array evidence from the revision notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m03",
+    "question": "What is object instantiation, and what is a constructor?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 46
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 14. Constructor"
+      }
+    ],
+    "expected_keywords": [
+      "object",
+      "constructor"
+    ],
+    "rationale": "Requires object-instantiation evidence from the slides and constructor evidence from the notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m04",
+    "question": "What does public visibility mean, and what is an array?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 40
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 7. Arrays"
+      }
+    ],
+    "expected_keywords": [
+      "public",
+      "array"
+    ],
+    "rationale": "Requires visibility evidence from the slides and array evidence from the notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m05",
+    "question": "What is a class, and what is method overriding?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 3
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 17. Method Overriding"
+      }
+    ],
+    "expected_keywords": [
+      "class",
+      "overriding"
+    ],
+    "rationale": "Requires class evidence from the slides and overriding evidence from the notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m06",
+    "question": "What is a list, and what is a for-each loop used for?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 21
+      },
+      {
+        "file": "pdf/JAVA PROGRAMMING NOTES.pdf",
+        "page": 23
+      }
+    ],
+    "expected_keywords": [
+      "list",
+      "for each"
+    ],
+    "rationale": "Requires list evidence from the slides and for-each evidence from the Java PDF.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m07",
+    "question": "What does public visibility mean, and what is encapsulation?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 40
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 15. Encapsulation"
+      }
+    ],
+    "expected_keywords": [
+      "public",
+      "encapsulation"
+    ],
+    "rationale": "Requires visibility evidence from the slides and encapsulation evidence from the notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m08",
+    "question": "What is a list, and what is an ArrayList?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 21
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 19. Array vs ArrayList"
+      }
+    ],
+    "expected_keywords": [
+      "list",
+      "ArrayList"
+    ],
+    "rationale": "Requires list evidence from the slides and ArrayList evidence from the revision notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m09",
+    "question": "What are static methods, and what is an enhanced for loop?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 62
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 9. Enhanced For Loop"
+      }
+    ],
+    "expected_keywords": [
+      "static",
+      "for-each"
+    ],
+    "rationale": "Requires static-method evidence from the slides and enhanced-for evidence from the notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "m10",
+    "question": "What is object instantiation, and what is a nested loop?",
+    "type": "multi_doc",
+    "answerable": true,
+    "expected_sources": [
+      {
+        "file": "slides/Topic5ClassDesign.ppt",
+        "slide": 46
+      },
+      {
+        "file": "text/course_notes.md",
+        "section": "Programming and Java Revision Notes / 6. Nested Loops"
+      }
+    ],
+    "expected_keywords": [
+      "object",
+      "nested"
+    ],
+    "rationale": "Requires object-instantiation evidence from the slides and nested-loop evidence from the notes.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u01",
+    "question": "How does the G1 garbage collector choose evacuation regions?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "The Java material discusses arrays and objects, but not G1 collector region selection.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u02",
+    "question": "How does Java virtual thread pinning affect synchronized blocks?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Java methods are covered, but virtual-thread scheduling is not.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u03",
+    "question": "What are the Java Memory Model happens-before rules for volatile writes?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Class variables are covered, but memory-model ordering is not.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u04",
+    "question": "What is the exact amortized time complexity of the presented IntList growth policy?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "The slides ask about capacity and growth but do not give a complete growth policy or amortized analysis.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u05",
+    "question": "How does Java type erasure implement generic bridge methods?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Java types and classes appear, but erasure and compiler bridge methods are not explained.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u06",
+    "question": "How does the Java module system enforce requires transitive readability?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Visibility modifiers are covered, but module readability is not.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u07",
+    "question": "How does reflection bypass private field access under strong module encapsulation?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "Private visibility is discussed, but reflective access under modules is not.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u08",
+    "question": "How does Java ZGC use colored pointers and load barriers?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "The uploaded Java/OOP materials do not explain ZGC colored-pointer implementation.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u09",
+    "question": "How does pattern matching for switch determine exhaustiveness for sealed class hierarchies?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "The uploaded materials cover classes and control structures but not sealed-class switch exhaustiveness.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  },
+  {
+    "id": "u10",
+    "question": "How are Java lambda expressions implemented using invokedynamic and LambdaMetafactory?",
+    "type": "unsupported",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_keywords": [],
+    "rationale": "The uploaded materials do not explain JVM lambda linkage internals.",
+    "verification": "human_verified",
+    "verified_by": "submission author",
+    "verified_at": "2026-09-12T16:27:15.633257+00:00"
+  }
+]

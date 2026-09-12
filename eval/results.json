@@ -1,0 +1,1163 @@
+{
+  "run_at": "2026-09-12T16:27:50.367490+00:00",
+  "official_labels": true,
+  "label_status": "human_verified",
+  "metric_limitations": "Answer success is a status + expected-keyword + exact-location proxy, not human semantic grading. Citation precision uses annotated expected locations; alternative valid sources can score as false positives. No hallucination-free claim is measured.",
+  "retrieval_mode": "hybrid_bm25_semantic_rrf",
+  "provider": "extractive",
+  "groups": {
+    "single_doc": {
+      "passed": 7,
+      "total": 10
+    },
+    "multi_doc": {
+      "passed": 5,
+      "total": 10
+    },
+    "unsupported": {
+      "passed": 10,
+      "total": 10
+    }
+  },
+  "exact_source_locations": {
+    "passed": 12,
+    "total": 20
+  },
+  "citation_precision_proxy": 0.9090909090909091,
+  "mean_recall_at_returned_k": 0.975,
+  "handwriting_retrieval": {
+    "passed": 1,
+    "total": 1
+  },
+  "mean_retrieval_ms": 31.49,
+  "mean_answer_ms": 37.08,
+  "elapsed_seconds": 19.56,
+  "records": [
+    {
+      "id": "s01",
+      "type": "single_doc",
+      "question": "What does arr.length give in Java?",
+      "passed_proxy": false,
+      "failure": "SUFFICIENCY_FALSE_NEGATIVE",
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 8. Array Traversal"
+        ]
+      ],
+      "actual_locations": [],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": false,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 35.23,
+      "answer_ms": 39.76,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s02",
+      "type": "single_doc",
+      "question": "When is a for loop commonly used?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "A `for` loop is commonly used when the number of iterations is known.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 3. Loops / for Loop"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 3. Loops / for Loop"
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 24.16,
+      "answer_ms": 29.99,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s03",
+      "type": "single_doc",
+      "question": "What is a method in Java?",
+      "passed_proxy": false,
+      "failure": "SUFFICIENCY_FALSE_NEGATIVE",
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 11. Methods"
+        ]
+      ],
+      "actual_locations": [],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": false,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 27.94,
+      "answer_ms": 31.8,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s04",
+      "type": "single_doc",
+      "question": "What is a class?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "class is a structure that defines the data and the methods to work on that data.",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 22.99,
+      "answer_ms": 28.66,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s05",
+      "type": "single_doc",
+      "question": "What is a list?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "list is a collection of items with a definite order.",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 25.74,
+      "answer_ms": 29.11,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s06",
+      "type": "single_doc",
+      "question": "Explain encapsulation",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "Encapsulation means combining data and methods inside a class and controlling access to the data.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 15. Encapsulation"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 15. Encapsulation"
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 21.82,
+      "answer_ms": 26.04,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s07",
+      "type": "single_doc",
+      "question": "Explain public",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "All parts of a class have visibility modifiers\nJava keywords\npublic, protected, private, (no modifier means package access)\ndo not use these modifiers on local variables (syntax error)\npublic means that constructor, method, or field may be accessed outside of the class. \npart of the interface\nconstructors and methods are generally public\nprivate means that part of the class is hidden and inaccessible by code outside of the class\npart of the implementation\ndata fields are generally private",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 21.46,
+      "answer_ms": 25.72,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s08",
+      "type": "single_doc",
+      "question": "What is the main size limitation of a Java array?",
+      "passed_proxy": false,
+      "failure": "SUFFICIENCY_FALSE_NEGATIVE",
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [
+        [
+          "handwriting/Java-Basics-Handwritten-Notes_page-0005-724x1024 - Copy.jpg",
+          1,
+          null,
+          null
+        ]
+      ],
+      "actual_locations": [],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": false,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": true,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 12.63,
+      "answer_ms": 17.27,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s09",
+      "type": "single_doc",
+      "question": "Explain nested for loop",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "A nested loop means one loop is placed inside another loop.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 6. Nested Loops"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 6. Nested Loops"
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 19.37,
+      "answer_ms": 22.68,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "single_doc",
+      "question": "Explain for each loop",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "Processing Arrays:\nWhen processing array elements, we often use either for loop or for each loop because all of the\nelements in an array are of the same type and the size of the array is known.",
+      "expected_locations": [
+        [
+          "pdf/JAVA PROGRAMMING NOTES.pdf",
+          23,
+          null,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "pdf/JAVA PROGRAMMING NOTES.pdf",
+          23,
+          null,
+          null
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 19.89,
+      "answer_ms": 23.01,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m01",
+      "type": "multi_doc",
+      "question": "What is a class, and what is an array?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "class is a structure that defines the data and the methods to work on that data.\n\narray stores multiple values of the same data type.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 2,
+      "citation_count": 2,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 38.95,
+      "answer_ms": 48.21,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m02",
+      "type": "multi_doc",
+      "question": "What is a list, and what is an array?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "list is a collection of items with a definite order.\n\narray stores multiple values of the same data type.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 2,
+      "citation_count": 2,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 37.47,
+      "answer_ms": 44.65,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m03",
+      "type": "multi_doc",
+      "question": "What is object instantiation, and what is a constructor?",
+      "passed_proxy": false,
+      "failure": "SECOND_SOURCE_MISSING",
+      "status": "PARTIALLY_ANSWERED",
+      "answer": "constructor is invoked at the time of object creation.\n\nSome requested parts are not covered by the available evidence.",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          46,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 14. Constructor"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "pdf/JAVA PROGRAMMING NOTES.pdf",
+          25,
+          null,
+          null
+        ]
+      ],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 0,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 44.23,
+      "answer_ms": 51.92,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m04",
+      "type": "multi_doc",
+      "question": "What does public visibility mean, and what is an array?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "All parts of a class have visibility modifiers\nJava keywords\npublic, protected, private, (no modifier means package access)\ndo not use these modifiers on local variables (syntax error)\npublic means that constructor, method, or field may be accessed outside of the class. \npart of the interface\nconstructors and methods are generally public\nprivate means that part of the class is hidden and inaccessible by code outside of the class\npart of the implementation\ndata fields are generally private\n\narray stores multiple values of the same data type.",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 7. Arrays"
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 2,
+      "citation_count": 2,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 45.39,
+      "answer_ms": 53.23,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m05",
+      "type": "multi_doc",
+      "question": "What is a class, and what is method overriding?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "class is a structure that defines the data and the methods to work on that data.\n\nMethod overriding occurs when a subclass provides its own implementation of a method already defined in the parent class.",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 17. Method Overriding"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          3,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 17. Method Overriding"
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 2,
+      "citation_count": 2,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 50.04,
+      "answer_ms": 63.53,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m06",
+      "type": "multi_doc",
+      "question": "What is a list, and what is a for-each loop used for?",
+      "passed_proxy": false,
+      "failure": "RETRIEVAL_FAILURE",
+      "status": "PARTIALLY_ANSWERED",
+      "answer": "list is a collection of items with a definite order.\n\nSome requested parts are not covered by the available evidence.",
+      "expected_locations": [
+        [
+          "pdf/JAVA PROGRAMMING NOTES.pdf",
+          23,
+          null,
+          null
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": false,
+      "recall_at_returned_k": 0.5,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 46.43,
+      "answer_ms": 53.19,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m07",
+      "type": "multi_doc",
+      "question": "What does public visibility mean, and what is encapsulation?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "ANSWERED",
+      "answer": "All parts of a class have visibility modifiers\nJava keywords\npublic, protected, private, (no modifier means package access)\ndo not use these modifiers on local variables (syntax error)\npublic means that constructor, method, or field may be accessed outside of the class. \npart of the interface\nconstructors and methods are generally public\nprivate means that part of the class is hidden and inaccessible by code outside of the class\npart of the implementation\ndata fields are generally private\n\nEncapsulation means combining data and methods inside a class and controlling access to the data.",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 15. Encapsulation"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          40,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 15. Encapsulation"
+        ]
+      ],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 2,
+      "citation_count": 2,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 46.68,
+      "answer_ms": 54.66,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m08",
+      "type": "multi_doc",
+      "question": "What is a list, and what is an ArrayList?",
+      "passed_proxy": false,
+      "failure": "CITATION_FAILURE",
+      "status": "ANSWERED",
+      "answer": "list is a collection of items with a definite order.\n\nArrayList allows random access because array works at the index basis.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 19. Array vs ArrayList"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "actual_locations": [
+        [
+          "pdf/JAVA PROGRAMMING NOTES.pdf",
+          69,
+          null,
+          null
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          21,
+          null
+        ]
+      ],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": true,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 2,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 46.01,
+      "answer_ms": 53.3,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m09",
+      "type": "multi_doc",
+      "question": "What are static methods, and what is an enhanced for loop?",
+      "passed_proxy": false,
+      "failure": "SUFFICIENCY_FALSE_NEGATIVE",
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 9. Enhanced For Loop"
+        ],
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          62,
+          null
+        ]
+      ],
+      "actual_locations": [],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": false,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 54.04,
+      "answer_ms": 61.13,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "m10",
+      "type": "multi_doc",
+      "question": "What is object instantiation, and what is a nested loop?",
+      "passed_proxy": false,
+      "failure": "SECOND_SOURCE_MISSING",
+      "status": "PARTIALLY_ANSWERED",
+      "answer": "nested loop means one loop is placed inside another loop.\n\nSome requested parts are not covered by the available evidence.",
+      "expected_locations": [
+        [
+          "slides/Topic5ClassDesign.ppt",
+          null,
+          46,
+          null
+        ],
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 6. Nested Loops"
+        ]
+      ],
+      "actual_locations": [
+        [
+          "text/course_notes.md",
+          null,
+          null,
+          "Programming and Java Revision Notes / 6. Nested Loops"
+        ]
+      ],
+      "correct_locations": false,
+      "expected_files_found": false,
+      "keyword_check": false,
+      "recall_at_returned_k": 1.0,
+      "citation_hits": 1,
+      "citation_count": 1,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 49.69,
+      "answer_ms": 57.25,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u01",
+      "type": "unsupported",
+      "question": "How does the G1 garbage collector choose evacuation regions?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 21.01,
+      "answer_ms": 24.73,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u02",
+      "type": "unsupported",
+      "question": "How does Java virtual thread pinning affect synchronized blocks?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": true,
+      "retrieval_ms": 20.97,
+      "answer_ms": 24.4,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u03",
+      "type": "unsupported",
+      "question": "What are the Java Memory Model happens-before rules for volatile writes?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 23.4,
+      "answer_ms": 27.11,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u04",
+      "type": "unsupported",
+      "question": "What is the exact amortized time complexity of the presented IntList growth policy?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 23.16,
+      "answer_ms": 26.85,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u05",
+      "type": "unsupported",
+      "question": "How does Java type erasure implement generic bridge methods?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 23.47,
+      "answer_ms": 28.19,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u06",
+      "type": "unsupported",
+      "question": "How does the Java module system enforce requires transitive readability?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 21.03,
+      "answer_ms": 24.13,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u07",
+      "type": "unsupported",
+      "question": "How does reflection bypass private field access under strong module encapsulation?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 17.1,
+      "answer_ms": 21.03,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u08",
+      "type": "unsupported",
+      "question": "How does Java ZGC use colored pointers and load barriers?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 43.47,
+      "answer_ms": 50.13,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u09",
+      "type": "unsupported",
+      "question": "How does pattern matching for switch determine exhaustiveness for sealed class hierarchies?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 20.95,
+      "answer_ms": 24.3,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    },
+    {
+      "id": "u10",
+      "type": "unsupported",
+      "question": "How are Java lambda expressions implemented using invokedynamic and LambdaMetafactory?",
+      "passed_proxy": true,
+      "failure": null,
+      "status": "NOT_COVERED",
+      "answer": "I could not find sufficient evidence in your materials to answer this question.",
+      "expected_locations": [],
+      "actual_locations": [],
+      "correct_locations": true,
+      "expected_files_found": true,
+      "keyword_check": true,
+      "recall_at_returned_k": null,
+      "citation_hits": 0,
+      "citation_count": 0,
+      "handwriting_expected": false,
+      "handwriting_retrieved": false,
+      "retrieval_ms": 40.09,
+      "answer_ms": 46.39,
+      "mode": "extractive / hybrid_bm25_semantic_rrf",
+      "warnings": [
+        "Extractive mode returns source wording. Complex paraphrases and teaching transformations may require a configured provider."
+      ]
+    }
+  ],
+  "dataset_sha256": "5a53fb53c07917bba70461c1a14f54ac31654fd6a813de8f7b96983e8e74694d",
+  "documents": [
+    {
+      "name": "handwriting/Java-Basics-Handwritten-Notes_page-0005-724x1024 - Copy.jpg",
+      "hash": "9ef4729dba51414b3dc990d16a6dd2253d21d3e81ee7cff656da8c4d3cc45af4bfb1a1c9bc23d4fc243feca5ffb3cb2633ba170384830a2e50fe220374ff05ae:v2:local",
+      "units": 1
+    },
+    {
+      "name": "handwriting/oops-1.jpg",
+      "hash": "4871cc467394036d36f36d9d334e48328a8f5ced5c6a9755d0a9c577fff60cc9:v2:local",
+      "units": 1
+    },
+    {
+      "name": "pdf/JAVA PROGRAMMING NOTES.pdf",
+      "hash": "6d7150ab37c61c2748bab33860e0e407243d7b18a2d7160b1163cb9e100702a5:v2:local",
+      "units": 128
+    },
+    {
+      "name": "slides/Topic5ClassDesign.ppt",
+      "hash": "ca09d9667df836df251edb96891f3e82f38221b78e382bbc65ef21052be236f9:v2:local",
+      "units": 63
+    },
+    {
+      "name": "text/course_notes.md",
+      "hash": "77947df26bfca7dec3fb8980f469511f11a24073754531c175a0a65cba664c53:v2:local",
+      "units": 24
+    }
+  ]
+}
